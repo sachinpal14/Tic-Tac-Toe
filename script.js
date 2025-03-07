@@ -3,6 +3,7 @@ let resetbtn = document.querySelector(".reset");
 let newbtn = document.querySelector("#new");
 let msgcon = document.querySelector(".msg");
 let msg = document.querySelector("#msg");
+let container=document.querySelector(".container")
 
 let turnO = true;
 
@@ -56,6 +57,7 @@ const checkDraw =()=>{
   if(isDraw) {
     msg.innerText="Game Draw "
     msgcon.classList.remove("hide")
+    container.classList.add("hide")
   
   }
 }
@@ -65,10 +67,12 @@ const resetgame = () => {
   turnO = true;
   enabledbtn();
   msgcon.classList.add("hide");
+  container.classList.remove("hide")
 };
 const showwinner = (winner) => {
   msg.innerText = `Congratulations Winner is ${winner}`;
   msgcon.classList.remove("hide");
+  container.classList.add("hide")
   disabledbtn();
 };
 
